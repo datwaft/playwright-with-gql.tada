@@ -8,16 +8,19 @@ importers:
 
   .:
     dependencies:
+      '@playwright/test':
+        specifier: ^1.45.1
+        version: 1.45.1
       gql.tada:
         specifier: ^1.8.1
         version: 1.8.1(graphql@16.9.0)(svelte@4.2.18)(typescript@5.5.3)
+      graphql:
+        specifier: ^16.9.0
+        version: 16.9.0
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
     devDependencies:
-      '@playwright/test':
-        specifier: ^1.45.1
-        version: 1.45.1
       '@tsconfig/node20':
         specifier: ^20.1.4
         version: 20.1.4

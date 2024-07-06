@@ -5,6 +5,7 @@
   "dependencies": {
     "@playwright/test": "^1.45.1",
     "gql.tada": "^1.8.1",
+    "graphql": "^16.9.0",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
