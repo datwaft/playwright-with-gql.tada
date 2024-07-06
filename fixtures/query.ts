@@ -8,11 +8,11 @@ import {
 import { print } from "graphql";
 import type { RequireAtLeastOne } from "../types/utils.js";
 
-async function query<R, V>(
+export async function query<R, V>(
   document: TypedDocumentNode<R, V>,
   variables: V,
   options: RequireAtLeastOne<
-    { context?: BrowserContext; role?: string },
+    { context?: BrowserContext | undefined; role?: string | undefined },
     "context" | "role"
   >,
 ): Promise<R> {

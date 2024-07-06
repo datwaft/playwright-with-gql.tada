@@ -15,3 +15,8 @@ test("use `query` fixture with custom role", async ({ query }) => {
     "ENOENT: no such file or directory, open '.auth/partner.json'",
   );
 });
+
+test("use `getAllFilms` fixture", async ({ getAllFilms }) => {
+  const response = await getAllFilms();
+  console.log(response.map((it) => it?.title));
+});
