@@ -4,6 +4,13 @@
     "@tsconfig/strictest/tsconfig.json"
   ],
   "compilerOptions": {
-    "noEmit": true
+    "noEmit": true,
+    "plugins": [
+      {
+        "name": "gql.tada/ts-plugin",
+        "schema": "https://swapi-graphql.netlify.app/.netlify/functions/index",
+        "tadaOutputLocation": "./types/graphql-env.d.ts"
+      }
+    ]
   }
 }
