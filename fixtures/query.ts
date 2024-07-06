@@ -33,8 +33,14 @@ async function query<R, V>(
 }
 
 export const test = base.extend<{
-  query<R, V>(document: TypedDocumentNode<R, V>, variables: V): Promise<R>;
+  query<R, V>(
+    document: TypedDocumentNode<R, V>,
+    variables: V,
+    options?: { context?: BrowserContext; role?: string },
+  ): Promise<R>;
 }>({
   query: async ({ context }, use) =>
-    await use((document, variables) => query(document, variables, { context })),
+    await use((document, variables, options) =>
+      query(document, variables, { context, ...options }),
+    ),
 });
