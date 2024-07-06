@@ -9,6 +9,7 @@
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@tsconfig/node20": "^20.1.4",
     "@tsconfig/strictest": "^2.0.5",
     "@types/node": "^20.14.10",
