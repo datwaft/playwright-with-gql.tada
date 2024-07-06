@@ -1,5 +1,8 @@
 {
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@9.4.0"
+  "packageManager": "pnpm@9.4.0",
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  }
 }
