@@ -9,7 +9,7 @@ import { print } from "graphql";
 import type { RequireAtLeastOne } from "../types/utils.js";
 
 async function query<R, V>(
-  query: TypedDocumentNode<R, V>,
+  document: TypedDocumentNode<R, V>,
   variables: V,
   options: RequireAtLeastOne<
     { context?: BrowserContext; role?: string },
@@ -23,7 +23,7 @@ async function query<R, V>(
     "https://swapi-graphql.netlify.app/.netlify/functions/index",
     {
       data: {
-        query: print(query),
+        query: print(document),
         variables,
       },
     },
@@ -33,8 +33,8 @@ async function query<R, V>(
 }
 
 export const test = base.extend<{
-  query<R, V>(query: TypedDocumentNode<R, V>, variables: V): Promise<R>;
+  query<R, V>(document: TypedDocumentNode<R, V>, variables: V): Promise<R>;
 }>({
   query: async ({ context }, use) =>
-    await use((q, v) => query(q, v, { context })),
+    await use((document, variables) => query(document, variables, { context })),
 });
